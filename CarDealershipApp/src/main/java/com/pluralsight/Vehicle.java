@@ -5,89 +5,50 @@ public class Vehicle {
     private int year;
     private String make;
     private String model;
-    private String type;
+    private String vehicleType;
     private String color;
     private int odometer;
     private double price;
 
-    public Vehicle(int vin, int year, String make, String model, String type, String color, int odometer, double price) {
+    public Vehicle(int vin, int year, String make, String model, String vehicleType,
+                   String color, int odometer, double price) {
         this.vin = vin;
         this.year = year;
         this.make = make;
         this.model = model;
-        this.type = type;
+        this.vehicleType = vehicleType;
         this.color = color;
         this.odometer = odometer;
         this.price = price;
     }
 
-    public int getVin() {
-        return vin;
-    }
+    public int getVin() { return vin; }
+    public void setVin(int vin) { this.vin = vin; }
 
-    public int getYear() {
-        return year;
-    }
+    public int getYear() { return year; }
+    public void setYear(int year) { this.year = year; }
 
-    public String getMake() {
-        return make;
-    }
+    public String getMake() { return make; }
+    public void setMake(String make) { this.make = make; }
 
-    public String getModel() {
-        return model;
-    }
+    public String getModel() { return model; }
+    public void setModel(String model) { this.model = model; }
 
-    public String getType() {
-        return type;
-    }
+    public String getVehicleType() { return vehicleType; }
+    public void setVehicleType(String vehicleType) { this.vehicleType = vehicleType; }
 
-    public String getColor() {
-        return color;
-    }
+    public String getColor() { return color; }
+    public void setColor(String color) { this.color = color; }
 
-    public int getOdometer() {
-        return odometer;
-    }
+    public int getOdometer() { return odometer; }
+    public void setOdometer(int odometer) { this.odometer = odometer; }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public void setVin(int vin) {
-        this.vin = vin;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public void setMake(String make) {
-        this.make = make;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public void setOdometer(int odometer) {
-        this.odometer = odometer;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
+    public double getPrice() { return price; }
+    public void setPrice(double price) { this.price = price; }
 
     @Override
     public String toString() {
-        return year + " " + make + " " + model + " (" + color + ") - " + odometer + " miles - $" + price;
+        return vin + " | " + year + " | " + make + " | " + model + " | " + vehicleType +
+                " | " + color + " | " + odometer + " miles | $" + price;
     }
 }
-

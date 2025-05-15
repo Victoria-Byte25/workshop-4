@@ -1,13 +1,13 @@
+
 package com.pluralsight;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Dealership {
     private String name;
     private String address;
     private String phone;
-    private List<Vehicle> inventory;
+    private ArrayList<Vehicle> inventory;
 
     public Dealership(String name, String address, String phone) {
         this.name = name;
@@ -16,65 +16,72 @@ public class Dealership {
         this.inventory = new ArrayList<>();
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    public String getAddress() {
-        return address;
-    }
+    public String getAddress() { return address; }
+    public void setAddress(String address) { this.address = address; }
 
-    public String getPhone() {
-        return phone;
-    }
+    public String getPhone() { return phone; }
+    public void setPhone(String phone) { this.phone = phone; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public ArrayList<Vehicle> getAllVehicles() {
+        return inventory;
     }
 
     public void addVehicle(Vehicle vehicle) {
         inventory.add(vehicle);
     }
 
-    public List<Vehicle> getAllVehicles() {
-        return inventory;
+    public void removeVehicle(Vehicle vehicle) {
+        inventory.remove(vehicle);
     }
 
-    // Placeholders for future features (Phase 5)
-    public List<Vehicle> getVehiclesByPrice(double min, double max) {
-        return null;
+    public ArrayList<Vehicle> getVehiclesByPrice(double min, double max) {
+        ArrayList<Vehicle> results = new ArrayList<>();
+        for (Vehicle v : inventory) {
+            if (v.getPrice() >= min && v.getPrice() <= max) results.add(v);
+        }
+        return results;
     }
 
-    public List<Vehicle> getVehiclesByMakeModel(String make, String model) {
-        return null;
+    public ArrayList<Vehicle> getVehiclesByMakeModel(String make, String model) {
+        ArrayList<Vehicle> results = new ArrayList<>();
+        for (Vehicle v : inventory) {
+            if (v.getMake().equalsIgnoreCase(make) && v.getModel().equalsIgnoreCase(model)) results.add(v);
+        }
+        return results;
     }
 
-    public List<Vehicle> getVehiclesByYear(int minYear, int maxYear) {
-        return null;
+    public ArrayList<Vehicle> getVehiclesByYear(int minYear, int maxYear) {
+        ArrayList<Vehicle> results = new ArrayList<>();
+        for (Vehicle v : inventory) {
+            if (v.getYear() >= minYear && v.getYear() <= maxYear) results.add(v);
+        }
+        return results;
     }
 
-    public List<Vehicle> getVehiclesByColor(String color) {
-        return null;
+    public ArrayList<Vehicle> getVehiclesByColor(String color) {
+        ArrayList<Vehicle> results = new ArrayList<>();
+        for (Vehicle v : inventory) {
+            if (v.getColor().equalsIgnoreCase(color)) results.add(v);
+        }
+        return results;
     }
 
-    public List<Vehicle> getVehiclesByMileage(int minMileage, int maxMileage) {
-        return null;
+    public ArrayList<Vehicle> getVehiclesByMileage(int min, int max) {
+        ArrayList<Vehicle> results = new ArrayList<>();
+        for (Vehicle v : inventory) {
+            if (v.getOdometer() >= min && v.getOdometer() <= max) results.add(v);
+        }
+        return results;
     }
 
-    public List<Vehicle> getVehiclesByType(String type) {
-        return null;
-    }
-
-    public void removeVehicle(int vin) {
-        // to be implemented
+    public ArrayList<Vehicle> getVehiclesByType(String type) {
+        ArrayList<Vehicle> results = new ArrayList<>();
+        for (Vehicle v : inventory) {
+            if (v.getVehicleType().equalsIgnoreCase(type)) results.add(v);
+        }
+        return results;
     }
 }
-
