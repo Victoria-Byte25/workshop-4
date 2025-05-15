@@ -27,7 +27,7 @@ public class UserInterface {
                 case 8 -> processAddVehicleRequest();
                 case 9 -> processRemoveVehicleRequest();
                 case 0 -> {
-                    System.out.println("Goodbye!");
+                    System.out.println("Thanks for searching, see you soon!");
                     return;
                 }
                 default -> System.out.println("Invalid choice.");
